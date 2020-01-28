@@ -9,15 +9,15 @@ const Navbar = () => {
 			<div className="main-navbar-container">
 				<div className="navbar-logo-container">
 					<h1 className="navbar-logo" style={{ margin: "0px", padding: "0px" }}>
+						{/* TODO: Get a an actual logo and put it here */}
 						KBuild
 					</h1>
 				</div>
 				<div className="navbar-navigation-links-container">
-					<NavLink exact to="/" activeClassName="active" className="navbar-link">
+					<NavLink exact to="/" activeClassName="navbar-link-active" className="navbar-link">
 						Home
 					</NavLink>
-
-					<NavLink exact to="/about" activeClassName="active" className="navbar-link">
+					<NavLink exact to="/about" activeClassName="navbar-link-active" className="navbar-link">
 						About
 					</NavLink>
 				</div>

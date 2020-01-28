@@ -12,5 +12,5 @@ public class RestController {
 		return "Hello server world!";
 	}
 
-	
+
 }
