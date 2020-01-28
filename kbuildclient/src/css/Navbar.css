@@ -1,0 +1,17 @@
+.main-navbar-container {
+	display: flex;
+	flex-direction: row;
+	margin-top: 16px;
+}
+
+.navbar-logo-container {
+	flex: 2;
+}
+
+.navbar-navigation-links-container {
+	flex: 2;
+}
+
+.active {
+	background-color: blue;
+}
