@@ -1,0 +1,9 @@
+.main-buildingblock-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.buildingblock-content-container {
+	flex: 10;
+	margin: 0px 3rem;
+}

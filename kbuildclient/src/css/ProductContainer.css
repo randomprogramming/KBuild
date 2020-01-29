@@ -1,0 +1,15 @@
+.product-main-container {
+	display: flex;
+	flex-direction: row;
+}
+
+.product-image-container {
+	height: 350px;
+}
+
+.product-image {
+	height: 100%;
+	width: auto;
+	border: 2px solid #b58db8;
+	border-radius: 6px;
+}

@@ -6,7 +6,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class ProductModel {
 	@Column
-	private String imageFileName;
+	private String linkToImage;
 
 	@Column
 	private String linkToProduct;
@@ -14,12 +14,15 @@ public class ProductModel {
 	@Column
 	private String vendorName;
 
-	public String getImageFileName() {
-		return imageFileName;
+	@Column
+	private String price;
+
+	public String getLinkToImage() {
+		return linkToImage;
 	}
 
-	public void setImageFileName(String imageFileName) {
-		this.imageFileName = imageFileName;
+	public void setLinkToImage(String linkToImage) {
+		this.linkToImage = linkToImage;
 	}
 
 	public String getLinkToProduct() {
@@ -36,5 +39,13 @@ public class ProductModel {
 
 	public void setVendorName(String vendorName) {
 		this.vendorName = vendorName;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
 	}
 }
