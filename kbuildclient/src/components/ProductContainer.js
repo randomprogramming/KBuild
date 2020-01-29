@@ -25,7 +25,7 @@ const ProductContainer = props => {
 						</li>
 						{/* These are the fields that only some product have, so we have to check */}
 						<div style={{ marginTop: "1rem" }}>
-							{/* bool && Container will render the Container only if the bool is true */}
+							{/* (bool && Container) will render the Container only if the bool is true */}
 							{props.manufacturer && <li>Manufacturer: {props.manufacturer}</li>}
 							{props.layoutSize && <li>Layout Size: {props.layoutSize}</li>}
 							{props.material && <li>Material: {props.material}</li>}

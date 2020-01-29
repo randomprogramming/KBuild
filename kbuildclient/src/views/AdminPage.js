@@ -2,17 +2,18 @@ import React, { Component } from "react";
 import axios from "axios";
 
 import API from "../API";
+import AdminPageComponent from "../components/AdminPageComponent";
 
 export default class AdminPage extends Component {
 	constructor() {
 		super();
 		this.state = {
 			keycaplinkToImage: "",
-			keycaplinkToProduct: "",
-			keycapvendorName: "",
-			keycapmaterial: "",
-			keycapprice: "",
-			keycapProductName: "",
+			// keycaplinkToProduct: "",
+			// keycapvendorName: "",
+			// keycapmaterial: "",
+			// keycapprice: "",
+			// keycapProductName: "",
 		};
 
 		this.onUpdate = this.onUpdate.bind(this);
@@ -43,27 +44,25 @@ export default class AdminPage extends Component {
 	}
 	render() {
 		return (
-			<div style={{ border: "3px solid black", padding: "15px" }}>
-				<h1>Keycap</h1>
-				<input type="text" name="keycaplinkToImage" onChange={this.onUpdate} />
-				{"Link to image"}
-				<br />
-				<input type="text" name="keycaplinkToProduct" onChange={this.onUpdate} />
-				{"Link to product"}
-				<br />
-				<input type="text" name="keycapvendorName" onChange={this.onUpdate} />
-				{"Vendor name"}
-				<br />
-				<input type="text" name="keycapmaterial" onChange={this.onUpdate} />
-				{"Material"}
-				<br />
-				<input type="text" name="keycapprice" onChange={this.onUpdate} />
-				{"Price(Don't forget a currency symbol) [$99]"}
-				<br />
-				<input type="text" name="keycapproductName" onChange={this.onUpdate} />
-				{"Product name"}
-				<br />
-				<button onClick={this.addKeycap.bind(this)}>Submit KEYCAP</button>
+			<div>
+				<div style={{ border: "3px solid black", padding: "15px" }}>
+					<h1>KEYCAP</h1>
+					{/* This component takes in all the needed fields, created a <input /> for each field,
+					and a button which POSTs the entered data to the submitURL*/}
+					<AdminPageComponent
+						fields={[
+							"linkToImage",
+							"linkToProduct",
+							"vendorName",
+							"material",
+							"price",
+							"productName",
+						]}
+						submitURL={API.addKeycap}
+						componentName="KEYCAP"
+					/>
+				</div>
+				<div></div>
 			</div>
 		);
 	}
