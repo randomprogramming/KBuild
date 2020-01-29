@@ -7,3 +7,9 @@
 	flex: 10;
 	margin: 0px 3rem;
 }
+
+@media only screen and (max-width: 1000px) {
+	.buildingblock-content-container {
+		margin: 0px 3px;
+	}
+}

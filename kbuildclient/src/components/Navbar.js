@@ -10,7 +10,7 @@ const Navbar = () => {
 				<div className="navbar-logo-container">
 					<h1 className="navbar-logo" style={{ margin: "0px", padding: "0px" }}>
 						{/* TODO: Get a an actual logo and put it here */}
-						KBuild
+						KeeBuild
 					</h1>
 				</div>
 				<div className="navbar-navigation-links-container">
