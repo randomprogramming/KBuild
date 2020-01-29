@@ -7,7 +7,7 @@ import API from "../API";
 const Homepage = () => {
 	return (
 		<div className="main-homepage-container">
-			<div className="homepage-container-first-child">
+			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeycaps} />
 			</div>
 			<div className="homepage-container-child">

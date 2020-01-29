@@ -39,6 +39,7 @@
 }
 .product-information {
 	flex: 7;
+	font-size: 16px;
 }
 
 .link-to-product {

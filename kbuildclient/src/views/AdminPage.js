@@ -22,7 +22,7 @@ export default class AdminPage extends Component {
 					<p>
 						---LINK TO IMAGE is always a DIRECT link to the image which is already hosted somewhere
 					</p>
-					<p></p>
+					<p>---LAYOUT SIZE is a NUMBER, it can be 40,60,80,75 and etc.</p>
 				</div>
 				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
 					<h1>KEYCAP</h1>
@@ -55,6 +55,68 @@ export default class AdminPage extends Component {
 							"switchColor",
 						]}
 						submitURL={API.addSwitch}
+					/>
+				</div>
+				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
+					<h1>PLATE</h1>
+					<AdminPageComponent
+						componentName="PLATE"
+						fields={[
+							"linkToImage",
+							"linkToProduct",
+							"price",
+							"productName",
+							"vendorName",
+							"layoutSize",
+							"material",
+						]}
+						submitURL={API.addPlate}
+					/>
+				</div>
+				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
+					<h1>STABILIZER</h1>
+					<AdminPageComponent
+						componentName="STABILIZER"
+						fields={[
+							"linkToImage",
+							"linkToProduct",
+							"price",
+							"productName",
+							"vendorName",
+							"manufacturer",
+						]}
+						submitURL={API.addStabilizer}
+					/>
+				</div>
+				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
+					<h1>PCB</h1>
+					<AdminPageComponent
+						componentName="PCB"
+						fields={[
+							"linkToImage",
+							"linkToProduct",
+							"price",
+							"productName",
+							"vendorName",
+							"layoutSize",
+						]}
+						submitURL={API.addPCB}
+					/>
+				</div>
+				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
+					<h1>KB CASE</h1>
+					<AdminPageComponent
+						componentName="KB CASE"
+						fields={[
+							"linkToImage",
+							"linkToProduct",
+							"price",
+							"productName",
+							"vendorName",
+							"layoutSize",
+							"material",
+						]}
+						submitURL={API.addKeyboardCase}
 					/>
 				</div>
 			</div>

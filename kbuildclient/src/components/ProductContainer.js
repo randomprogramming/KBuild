@@ -27,7 +27,7 @@ const ProductContainer = props => {
 						<div style={{ marginTop: "1rem" }}>
 							{/* (bool && Container) will render the Container only if the bool is true */}
 							{props.manufacturer && <li>Manufacturer: {props.manufacturer}</li>}
-							{props.layoutSize && <li>Layout Size: {props.layoutSize}</li>}
+							{props.layoutSize && <li>Layout Size: {props.layoutSize + "%"}</li>}
 							{props.material && <li>Material: {props.material}</li>}
 							{props.switchColor && <li>Switch Color: {props.switchColor}</li>}
 						</div>
