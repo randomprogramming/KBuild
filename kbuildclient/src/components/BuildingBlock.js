@@ -11,24 +11,17 @@ const BuildingBlock = props => {
 	const arrowIconSize = "9x";
 	const arrowMarginSize = "7%";
 
-	let totalNumberOfProducts = 0;
-
 	const [currentProductContainer, setcurrentProductContainer] = useState(0);
 	const [productContainers, setproductContainers] = useState([]);
 
 	const [leftIsClickable, setleftIsClickable] = useState(currentProductContainer !== 0);
-	const [rightIsClickable, setrightIsClickable] = useState(
-		currentProductContainer === totalNumberOfProducts
-	);
+	const [rightIsClickable, setrightIsClickable] = useState(false);
 
 	const loadData = () => {
 		axios.get(props.getDataFrom).then(res => extractData(res.data));
 	};
 
 	const extractData = data => {
-		//set the amount of products that this block has
-		totalNumberOfProducts = data.length;
-
 		let tempProductContainers = [];
 
 		//for each product that we fetched from the server, create a ProductContainer component from it and
@@ -39,6 +32,9 @@ const BuildingBlock = props => {
 			)
 		);
 
+		if (tempProductContainers.length === 0 || tempProductContainers.length === 1) {
+			setrightIsClickable(false);
+		}
 		setproductContainers(tempProductContainers);
 	};
 
@@ -67,7 +63,7 @@ const BuildingBlock = props => {
 			}
 		}
 
-		if (currentProductContainer === productContainers.length - 1) {
+		if (currentProductContainer === productContainers.length) {
 			setrightIsClickable(false);
 		} else {
 			if (!rightIsClickable) {

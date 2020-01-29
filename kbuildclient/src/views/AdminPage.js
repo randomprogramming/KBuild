@@ -11,6 +11,8 @@ export default class AdminPage extends Component {
 			keycaplinkToProduct: "",
 			keycapvendorName: "",
 			keycapmaterial: "",
+			keycapprice: "",
+			keycapProductName: "",
 		};
 
 		this.onUpdate = this.onUpdate.bind(this);
@@ -29,6 +31,8 @@ export default class AdminPage extends Component {
 				linkToProduct: this.state.keycaplinkToProduct,
 				vendorName: this.state.keycapvendorName,
 				material: this.state.keycapmaterial,
+				price: this.state.keycapprice,
+				productName: this.state.keycapproductName,
 			},
 			{
 				headers: {
@@ -52,6 +56,12 @@ export default class AdminPage extends Component {
 				<br />
 				<input type="text" name="keycapmaterial" onChange={this.onUpdate} />
 				{"Material"}
+				<br />
+				<input type="text" name="keycapproductName" onChange={this.onUpdate} />
+				{"Price(Don't forget a currency symbol)"}
+				<br />
+				<input type="text" name="keycapproductName" onChange={this.onUpdate} />
+				{"Product name"}
 				<br />
 				<button onClick={this.addKeycap.bind(this)}>Submit KEYCAP</button>
 			</div>

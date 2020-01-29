@@ -6,6 +6,9 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public class ProductModel {
 	@Column
+	private String productName;
+
+	@Column
 	private String linkToImage;
 
 	@Column
@@ -16,6 +19,14 @@ public class ProductModel {
 
 	@Column
 	private String price;
+
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
 
 	public String getLinkToImage() {
 		return linkToImage;
