@@ -17,8 +17,8 @@ public class ProductModel {
 	@Column
 	private String vendorName;
 
-	@Column
-	private short price;
+	@Column(precision = 2)
+	private Double price;
 
 	public String getProductName() {
 		return productName;
@@ -52,11 +52,11 @@ public class ProductModel {
 		this.vendorName = vendorName;
 	}
 
-	public short getPrice() {
+	public Double getPrice() {
 		return price;
 	}
 
-	public void setPrice(short price) {
+	public void setPrice(Double price) {
 		this.price = price;
 	}
 }

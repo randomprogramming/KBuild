@@ -24,7 +24,7 @@ export default class AdminPage extends Component {
 					</p>
 					<p></p>
 				</div>
-				<div style={{ border: "3px solid black", padding: "15px" }}>
+				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
 					<h1>KEYCAP</h1>
 					{/* This component takes in all the needed fields, created a <input /> for each field,
 					and a button which POSTs the entered data to the submitURL*/}
@@ -39,6 +39,22 @@ export default class AdminPage extends Component {
 							"productName",
 						]}
 						submitURL={API.addKeycap}
+					/>
+				</div>
+				<div style={{ border: "3px solid black", padding: "15px", margin: "5px" }}>
+					<h1>SWITCH</h1>
+					<AdminPageComponent
+						componentName="SWITCH"
+						fields={[
+							"linkToImage",
+							"linkToProduct",
+							"price",
+							"productName",
+							"vendorName",
+							"manufacturer",
+							"switchColor",
+						]}
+						submitURL={API.addSwitch}
 					/>
 				</div>
 			</div>

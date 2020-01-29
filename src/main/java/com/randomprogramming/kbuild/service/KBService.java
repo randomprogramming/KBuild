@@ -1,8 +1,10 @@
 package com.randomprogramming.kbuild.service;
 
 import com.randomprogramming.kbuild.entity.keyboard.Keycap;
+import com.randomprogramming.kbuild.entity.keyboard.Switch;
 import com.randomprogramming.kbuild.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -35,6 +37,16 @@ public class KBService {
 	public List<Keycap> getAllKeycaps(){
 		List<Keycap> keycaps = new ArrayList<>();
 		keycapRepository.findAll().forEach(keycaps::add);
+		return keycaps;
+	}
+
+	public void addSwitch(Switch keyboardSwitch) {
+		switchRepository.save(keyboardSwitch);
+	}
+
+	public List<Switch> getAllSwitches(){
+		List<Switch> keycaps = new ArrayList<>();
+		switchRepository.findAll().forEach(keycaps::add);
 		return keycaps;
 	}
 }
