@@ -16,7 +16,7 @@ public class Switch extends ProductModel {
 	private String manufacturer;
 
 	@Column
-	private String color;
+	private String switchColor;
 
 	public int getId() {
 		return id;
@@ -34,11 +34,11 @@ public class Switch extends ProductModel {
 		this.manufacturer = manufacturer;
 	}
 
-	public String getColor() {
-		return color;
+	public String getSwitchColor() {
+		return switchColor;
 	}
 
-	public void setColor(String color) {
-		this.color = color;
+	public void setSwitchColor(String switchColor) {
+		this.switchColor = switchColor;
 	}
 }

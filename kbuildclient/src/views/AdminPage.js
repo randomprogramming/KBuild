@@ -57,8 +57,8 @@ export default class AdminPage extends Component {
 				<input type="text" name="keycapmaterial" onChange={this.onUpdate} />
 				{"Material"}
 				<br />
-				<input type="text" name="keycapproductName" onChange={this.onUpdate} />
-				{"Price(Don't forget a currency symbol)"}
+				<input type="text" name="keycapprice" onChange={this.onUpdate} />
+				{"Price(Don't forget a currency symbol) [$99]"}
 				<br />
 				<input type="text" name="keycapproductName" onChange={this.onUpdate} />
 				{"Product name"}

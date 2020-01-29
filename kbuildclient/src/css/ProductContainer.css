@@ -13,3 +13,36 @@
 	border: 2px solid #b58db8;
 	border-radius: 6px;
 }
+
+.product-info-container {
+	display: flex;
+	flex-direction: column;
+	margin-left: 1rem;
+	width: 100%;
+}
+
+@media only screen and (max-width: 1000px) {
+	h2 {
+		font-size: 14px;
+	}
+	.product-info-container {
+		margin: 0px;
+	}
+}
+
+.product-name {
+	flex: 2;
+}
+.product-information {
+	flex: 7;
+}
+
+.link-to-product {
+	text-decoration: none;
+	color: #b58db8;
+	font-size: 24px;
+}
+
+.link-to-product:hover {
+	text-decoration: underline;
+}

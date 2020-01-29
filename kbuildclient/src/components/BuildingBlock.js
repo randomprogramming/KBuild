@@ -28,10 +28,22 @@ const BuildingBlock = props => {
 		//store that ProductContainer in the tempContainers, which then gets saved to the state later
 		data.map(product =>
 			tempProductContainers.push(
-				<ProductContainer linkToImage={product.linkToImage} name={product.vendorName} />
+				// Whenever we add new properties to Products in database, we have to update this here
+				// Also we have to actually create a <li> element to show it inside of ProductContainer
+				<ProductContainer
+					productName={product.productName}
+					linkToImage={product.linkToImage}
+					linkToProduct={product.linkToProduct}
+					vendorName={product.vendorName}
+					price={product.price}
+					// The next properties can be undefined
+					material={product.material}
+					manufacturer={product.manufacturer}
+					switchColor={product.switchColor}
+					layoutSize={product.layoutSize}
+				/>
 			)
 		);
-
 		if (tempProductContainers.length === 0 || tempProductContainers.length === 1) {
 			setrightIsClickable(false);
 		}
@@ -63,7 +75,7 @@ const BuildingBlock = props => {
 			}
 		}
 
-		if (currentProductContainer === productContainers.length) {
+		if (currentProductContainer === productContainers.length - 1) {
 			setrightIsClickable(false);
 		} else {
 			if (!rightIsClickable) {
