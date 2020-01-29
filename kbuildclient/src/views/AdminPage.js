@@ -1,55 +1,35 @@
 import React, { Component } from "react";
-import axios from "axios";
 
 import API from "../API";
 import AdminPageComponent from "../components/AdminPageComponent";
 
 export default class AdminPage extends Component {
-	constructor() {
-		super();
-		this.state = {
-			keycaplinkToImage: "",
-			// keycaplinkToProduct: "",
-			// keycapvendorName: "",
-			// keycapmaterial: "",
-			// keycapprice: "",
-			// keycapProductName: "",
-		};
-
-		this.onUpdate = this.onUpdate.bind(this);
-	}
-
-	onUpdate(event) {
-		this.setState({
-			[event.target.name]: event.target.value,
-		});
-	}
-	addKeycap() {
-		axios.post(
-			API.addKeycap,
-			{
-				linkToImage: this.state.keycaplinkToImage,
-				linkToProduct: this.state.keycaplinkToProduct,
-				vendorName: this.state.keycapvendorName,
-				material: this.state.keycapmaterial,
-				price: this.state.keycapprice,
-				productName: this.state.keycapproductName,
-			},
-			{
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		);
-	}
 	render() {
 		return (
 			<div>
+				<div>
+					<h1>NOTES FOR FUTURE ADDITIONS TO THE DATABASE:</h1>
+					<p>
+						---ALWAYS ONLY ENTER DATA INTO A SINGLE INPUT BELOW there are multiple input fields with
+						the same NAME attribute, which means that the wrong one can be submitted to the
+						database.
+					</p>
+					<p>---ALWAYS RELOAD the page after submitting a item</p>
+					<p>
+						---PRICE is always a number, the currency icon, $ in this case, will get added later in
+						the frontend.
+					</p>
+					<p>
+						---LINK TO IMAGE is always a DIRECT link to the image which is already hosted somewhere
+					</p>
+					<p></p>
+				</div>
 				<div style={{ border: "3px solid black", padding: "15px" }}>
 					<h1>KEYCAP</h1>
 					{/* This component takes in all the needed fields, created a <input /> for each field,
 					and a button which POSTs the entered data to the submitURL*/}
 					<AdminPageComponent
+						componentName="KEYCAP"
 						fields={[
 							"linkToImage",
 							"linkToProduct",
@@ -59,10 +39,8 @@ export default class AdminPage extends Component {
 							"productName",
 						]}
 						submitURL={API.addKeycap}
-						componentName="KEYCAP"
 					/>
 				</div>
-				<div></div>
 			</div>
 		);
 	}
