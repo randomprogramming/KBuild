@@ -32,10 +32,14 @@ export default class AdminPage extends Component {
 		});
 		console.log(token);
 	}
+	isInRole() {
+		axios.get("/api/isinrole").then(res => console.log(res.data));
+	}
 
 	render() {
 		return (
 			<div>
+				<button onClick={this.isInRole.bind(this)}>Is in admin</button>
 				<button onClick={this.getLoginStatus.bind(this)}>Get logged status</button>
 				<form action={API.login} method="POST">
 					<div className="form-container">
@@ -104,6 +108,7 @@ export default class AdminPage extends Component {
 							"price",
 							"productName",
 						]}
+						_csrf={this.state._csrf}
 						submitURL={API.addKeycap}
 					/>
 				</div>
@@ -120,6 +125,7 @@ export default class AdminPage extends Component {
 							"manufacturer",
 							"switchColor",
 						]}
+						_csrf={this.state._csrf}
 						submitURL={API.addSwitch}
 					/>
 				</div>
@@ -136,6 +142,7 @@ export default class AdminPage extends Component {
 							"layoutSize",
 							"material",
 						]}
+						_csrf={this.state._csrf}
 						submitURL={API.addPlate}
 					/>
 				</div>
@@ -151,6 +158,7 @@ export default class AdminPage extends Component {
 							"vendorName",
 							"manufacturer",
 						]}
+						_csrf={this.state._csrf}
 						submitURL={API.addStabilizer}
 					/>
 				</div>
@@ -166,6 +174,7 @@ export default class AdminPage extends Component {
 							"vendorName",
 							"layoutSize",
 						]}
+						_csrf={this.state._csrf}
 						submitURL={API.addPCB}
 					/>
 				</div>
@@ -182,6 +191,7 @@ export default class AdminPage extends Component {
 							"layoutSize",
 							"material",
 						]}
+						_csrf={this.state._csrf}
 						submitURL={API.addKeyboardCase}
 					/>
 				</div>

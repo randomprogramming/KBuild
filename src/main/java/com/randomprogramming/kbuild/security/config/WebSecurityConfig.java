@@ -27,46 +27,48 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception{
-//		http
-//				.csrf().disable()
-//				.authorizeRequests()
-//				.anyRequest().authenticated()
-//				.antMatchers(				"/api/getallkeycaps", "/api/getallswitches",
-//											"/api/getallplates", "/api/getallpcbs",
-//											"/api/getallstabilizers", "/api/getallkeyboardcases",
-//											"/api/me", "/login").permitAll()
+		http
+				.authorizeRequests()
+
+				.antMatchers(				"/api/getallkeycaps", "/api/getallswitches",
+											"/api/getallplates", "/api/getallpcbs",
+											"/api/getallstabilizers", "/api/getallkeyboardcases",
+											"/api/me", "/login", "/api/getcsrf", "/api/isinrole").permitAll()
 //				.antMatchers(	HttpMethod.POST,"/api/addkeycap", "/api/addswitch",
 //											"/api/addplate", "/api/addpcb",
 //											"/api/addstabilizer", "/api/addkeyboardcase").hasRole("ADMIN")
-//				.and()
-//				.formLogin()
-//				.defaultSuccessUrl("http://192.168.1.105:3000/api/adminpage", true)
-//		.and()
-//		.logout()
-//		.logoutSuccessUrl("/loggedout")
-//		.logoutUrl("/logout")
-//		.deleteCookies("JSESSIONID");
-		http
-				.authorizeRequests()
-				.antMatchers("/api/getalltopics").permitAll()
-				.antMatchers("/api/findtopicbycodename/**").permitAll()
-				.antMatchers("/api/getpostbyid/**").permitAll()
-				.antMatchers(HttpMethod.POST,"/api/addkeycap").hasRole("ADMIN")
-				.antMatchers("/api/createpost/**").hasAnyRole("ADMIN", "USER")
-				.antMatchers("/api/getpostsfor/**").permitAll()
-				.antMatchers("/api/me").permitAll()
-				.antMatchers("/login", "/registeruser").permitAll()
-				.antMatchers("/dologoutuser").permitAll()
-				.antMatchers("/api/getcsrf").permitAll()
+				.antMatchers(HttpMethod.POST, "/api/addkeycap").hasRole("ADMIN")
+				.antMatchers(HttpMethod.POST, "/api/addswitch").hasAnyRole("ADMIN")
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
 				.defaultSuccessUrl("http://192.168.1.105:3000/api/adminpage", true)
 				.and()
 				.logout()
-				.logoutSuccessUrl("http://192.168.1.105:3000/")
-				.logoutUrl("/dologoutuser")
+				.logoutSuccessUrl("/loggedout")
+				.logoutUrl("/logout")
 				.deleteCookies("JSESSIONID");
+//		http
+//				.authorizeRequests()
+//				.antMatchers("/api/getalltopics").permitAll()
+//				.antMatchers("/api/findtopicbycodename/**").permitAll()
+//				.antMatchers("/api/getpostbyid/**").permitAll()
+//				.antMatchers(HttpMethod.POST,"/api/addkeycap").hasRole("ADMIN")
+//				.antMatchers("/api/createpost/**").hasAnyRole("ADMIN", "USER")
+//				.antMatchers("/api/getpostsfor/**").permitAll()
+//				.antMatchers("/api/me").permitAll()
+//				.antMatchers("/login", "/registeruser").permitAll()
+//				.antMatchers("/dologoutuser").permitAll()
+//				.antMatchers("/api/getcsrf").permitAll()
+//				.anyRequest().authenticated()
+//				.and()
+//				.formLogin()
+//				.defaultSuccessUrl("http://192.168.1.105:3000/api/adminpage", true)
+//				.and()
+//				.logout()
+//				.logoutSuccessUrl("http://192.168.1.105:3000/")
+//				.logoutUrl("/dologoutuser")
+//				.deleteCookies("JSESSIONID");
 
 	}
 

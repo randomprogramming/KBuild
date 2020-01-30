@@ -25,4 +25,10 @@ public class AccountController {
 		CsrfToken token = (CsrfToken)request.getAttribute("_csrf");
 		return token.getParameterName() + ":" + token.getToken();
 	}
+
+	@GetMapping("/api/isinrole")
+	@ResponseBody
+	public boolean isInRole(HttpServletRequest httpServletRequest){
+		return httpServletRequest.isUserInRole("ADMIN");
+	}
 }

@@ -23,13 +23,6 @@ public class AccountService {
 		return accountRepository.findFirstByUsername(username);
 	}
 
-	public List<GrantedAuthority> getAuthorities(Account account){
-		List<GrantedAuthority> roles = new ArrayList<>();
-		String role = account.getRole();
-		roles.add(new SimpleGrantedAuthority(role));
-		return roles;
-	}
-
 	public void createNewAccount(String username, String password, String role) {
 		Account account = new Account(username, passwordEncoder.encode(password), role);
 		accountRepository.save(account);

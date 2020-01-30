@@ -9,8 +9,18 @@ export default class AdminPageComponent extends Component {
 		this.onUpdate = this.onUpdate.bind(this);
 	}
 	submitProduct() {
-		axios.post(this.props.submitURL, this.formData(), {
-			"Content-Type": "application/json",
+		// axios.post(this.props.submitURL, this.formData(), {
+		// 	"Content-Type": "application/json",
+		// });
+		axios({
+			url: this.props.submitURL,
+			method: "POST",
+			withCredentials: true,
+			data: this.formData(),
+			headers: {
+				"X-CSRF-TOKEN": this.props._csrf.token,
+				"Content-Type": "application/json",
+			},
 		});
 	}
 	formData() {
