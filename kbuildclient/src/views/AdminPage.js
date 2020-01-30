@@ -1,12 +1,78 @@
 import React, { Component } from "react";
+import axios from "axios";
 
 import API from "../API";
 import AdminPageComponent from "../components/AdminPageComponent";
 
 export default class AdminPage extends Component {
+	constructor() {
+		super();
+		this.state = {
+			_csrf: {
+				parameterName: "",
+				token: "",
+			},
+		};
+	}
+	getLoginStatus() {
+		axios.get(API.me).then(res => console.log(res));
+	}
+	componentDidMount() {
+		axios.get(API.getcsrf).then(res => this.extractToken(res.data));
+	}
+
+	extractToken(fulltoken) {
+		const parameterName = fulltoken.split(":")[0];
+		const token = fulltoken.split(":")[1];
+		this.setState({
+			_csrf: {
+				parameterName,
+				token,
+			},
+		});
+		console.log(token);
+	}
+
 	render() {
 		return (
 			<div>
+				<button onClick={this.getLoginStatus.bind(this)}>Get logged status</button>
+				<form action={API.login} method="POST">
+					<div className="form-container">
+						<div
+							className="form-username-container"
+							style={{ display: "flex", flexDirection: "column" }}
+						>
+							<div>
+								<label htmlFor="username" className="label username-label">
+									Username
+								</label>
+							</div>
+							<input type="text" id="username" name="username" />
+						</div>
+						<div
+							className="form-password-container"
+							style={{ display: "flex", flexDirection: "column" }}
+						>
+							<div>
+								<label htmlFor="password" className="label password-label">
+									Password
+								</label>
+							</div>
+							<input type="password" id="password" name="password" />
+						</div>
+						<div>
+							<input
+								type="hidden"
+								name={this.state._csrf.parameterName}
+								value={this.state._csrf.token}
+							/>
+						</div>
+						<div className="submit-button-container">
+							<input type="submit" id="submit" value="Sign In" />
+						</div>
+					</div>
+				</form>
 				<div>
 					<h1>NOTES FOR FUTURE ADDITIONS TO THE DATABASE:</h1>
 					<p>

@@ -32,7 +32,7 @@ export default class AdminPageComponent extends Component {
 							<input
 								type="text"
 								name={field}
-								id={field}
+								// id={field}
 								onChange={this.onUpdate}
 								style={{ width: "50%", height: "2em" }}
 							/>

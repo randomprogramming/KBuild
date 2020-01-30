@@ -1,20 +1,24 @@
 //This is the URL of the server where all the axios requests will be headed
-const SERVER_URL = "http://192.168.1.105:8080/api";
+// const SERVER_URL = "http://192.168.1.105:8080/api";
+const SERVER_URL = "";
 
 const API = {
-	test: SERVER_URL + "/test",
-	addKeycap: SERVER_URL + "/addkeycap",
-	getAllKeycaps: SERVER_URL + "/getallkeycaps",
-	addSwitch: SERVER_URL + "/addswitch",
-	getAllSwitches: SERVER_URL + "/getallswitches",
-	addPlate: SERVER_URL + "/addplate",
-	getAllPlates: SERVER_URL + "/getallplates",
-	addStabilizer: SERVER_URL + "/addstabilizer",
-	getAllStabilizers: SERVER_URL + "/getallstabilizers",
-	addPCB: SERVER_URL + "/addpcb",
-	getAllPCBs: SERVER_URL + "/getallpcbs",
-	addKeyboardCase: SERVER_URL + "/addkeyboardcase",
-	getAllKeyboardCases: SERVER_URL + "/getallkeyboardcases",
+	login: "/login",
+	me: SERVER_URL + "/api/me",
+	getcsrf: SERVER_URL + "/api/getcsrf",
+	test: SERVER_URL + "/api/test",
+	addKeycap: SERVER_URL + "/api/addkeycap",
+	getAllKeycaps: SERVER_URL + "/api/getallkeycaps",
+	addSwitch: SERVER_URL + "/api/addswitch",
+	getAllSwitches: SERVER_URL + "/api/getallswitches",
+	addPlate: SERVER_URL + "/api/addplate",
+	getAllPlates: SERVER_URL + "/api/getallplates",
+	addStabilizer: SERVER_URL + "/api/addstabilizer",
+	getAllStabilizers: SERVER_URL + "/api/getallstabilizers",
+	addPCB: SERVER_URL + "/api/addpcb",
+	getAllPCBs: SERVER_URL + "/api/getallpcbs",
+	addKeyboardCase: SERVER_URL + "/api/addkeyboardcase",
+	getAllKeyboardCases: SERVER_URL + "/api/getallkeyboardcases",
 };
 
 export default API;
