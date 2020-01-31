@@ -10,7 +10,6 @@ const Homepage = () => {
 
 	return (
 		<div className="main-homepage-container">
-			<div className="price">{currentTotalPrice}</div>
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeycaps} />
 			</div>
@@ -28,6 +27,9 @@ const Homepage = () => {
 			</div>
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeyboardCases} />
+			</div>
+			<div className="price homepage-container-child">
+				<h2 style={{ padding: "0px", margin: "0px" }}>Total Price: ${currentTotalPrice}</h2>
 			</div>
 		</div>
 	);

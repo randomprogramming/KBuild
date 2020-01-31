@@ -6,3 +6,9 @@
 .homepage-container-child {
 	margin-bottom: 3rem;
 }
+
+.price {
+	text-transform: uppercase;
+	align-self: flex-end;
+	margin-right: 13%;
+}

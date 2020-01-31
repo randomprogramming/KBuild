@@ -29,6 +29,7 @@ public class KBService {
 	@Autowired
 	SwitchRepository switchRepository;
 
+//TODO: Check if the link for product or for image is too long, also check if the item is already in the database
 	public void addKeycap(Keycap keycap){
 		keycapRepository.save(keycap);
 	}
