@@ -11,22 +11,22 @@ const Homepage = () => {
 	return (
 		<div className="main-homepage-container">
 			<div className="homepage-container-child">
-				<BuildingBlock getDataFrom={API.getAllKeycaps} />
+				<BuildingBlock getDataFrom={API.getAllKeycaps} hasQuantity={false} />
 			</div>
 			<div className="homepage-container-child">
-				<BuildingBlock getDataFrom={API.getAllSwitches} />
+				<BuildingBlock getDataFrom={API.getAllSwitches} hasQuantity={true} />
 			</div>
 			<div className="homepage-container-child">
-				<BuildingBlock getDataFrom={API.getAllPlates} />
+				<BuildingBlock getDataFrom={API.getAllPlates} hasQuantity={false} />
 			</div>
 			<div className="homepage-container-child">
-				<BuildingBlock getDataFrom={API.getAllStabilizers} />
+				<BuildingBlock getDataFrom={API.getAllStabilizers} hasQuantity={false} />
 			</div>
 			<div className="homepage-container-child">
-				<BuildingBlock getDataFrom={API.getAllPCBs} />
+				<BuildingBlock getDataFrom={API.getAllPCBs} hasQuantity={false} />
 			</div>
 			<div className="homepage-container-child">
-				<BuildingBlock getDataFrom={API.getAllKeyboardCases} />
+				<BuildingBlock getDataFrom={API.getAllKeyboardCases} hasQuantity={false} />
 			</div>
 			<div className="price homepage-container-child unselectable">
 				<h2 style={{ padding: "0px", margin: "0px" }}>

@@ -31,6 +31,7 @@ const BuildingBlock = props => {
 				// Whenever we add new properties to Products in database, we have to update this here
 				// Also we have to actually create a <li> element to show it inside of ProductContainer
 				<ProductContainer
+					hasQuantity={props.hasQuantity}
 					productName={product.productName}
 					linkToImage={product.linkToImage}
 					linkToProduct={product.linkToProduct}
