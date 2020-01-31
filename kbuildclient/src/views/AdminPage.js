@@ -79,12 +79,11 @@ export default class AdminPage extends Component {
 				</form>
 				<div>
 					<h1>NOTES FOR FUTURE ADDITIONS TO THE DATABASE:</h1>
+					<p>---need to be logged in to post products to the database</p>
 					<p>
-						---ALWAYS ONLY ENTER DATA INTO A SINGLE INPUT BELOW there are multiple input fields with
-						the same NAME attribute, which means that the wrong one can be submitted to the
-						database.
+						---you can check if you're logged in with the Get logged status button, which prints to
+						the console
 					</p>
-					<p>---ALWAYS RELOAD the page after submitting a item</p>
 					<p>
 						---PRICE is always a number, the currency icon, $ in this case, will get added later in
 						the frontend.

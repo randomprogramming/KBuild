@@ -9,9 +9,6 @@ export default class AdminPageComponent extends Component {
 		this.onUpdate = this.onUpdate.bind(this);
 	}
 	submitProduct() {
-		// axios.post(this.props.submitURL, this.formData(), {
-		// 	"Content-Type": "application/json",
-		// });
 		axios({
 			url: this.props.submitURL,
 			method: "POST",
@@ -37,12 +34,12 @@ export default class AdminPageComponent extends Component {
 		return (
 			<div>
 				{this.props.fields.map(field => {
+					// For each field, create a <input />, at the end create a button which will submit the product to the server
 					return (
 						<div style={{ marginTop: "15px" }} key={field}>
 							<input
 								type="text"
 								name={field}
-								// id={field}
 								onChange={this.onUpdate}
 								style={{ width: "50%", height: "2em" }}
 							/>

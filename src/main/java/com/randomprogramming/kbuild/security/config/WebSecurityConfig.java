@@ -1,6 +1,5 @@
 package com.randomprogramming.kbuild.security.config;
 
-
 import com.randomprogramming.kbuild.security.service.AccountDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -34,11 +33,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 											"/api/getallplates", "/api/getallpcbs",
 											"/api/getallstabilizers", "/api/getallkeyboardcases",
 											"/api/me", "/login", "/api/getcsrf", "/api/isinrole").permitAll()
-//				.antMatchers(	HttpMethod.POST,"/api/addkeycap", "/api/addswitch",
-//											"/api/addplate", "/api/addpcb",
-//											"/api/addstabilizer", "/api/addkeyboardcase").hasRole("ADMIN")
-				.antMatchers(HttpMethod.POST, "/api/addkeycap").hasRole("ADMIN")
-				.antMatchers(HttpMethod.POST, "/api/addswitch").hasAnyRole("ADMIN")
+				.antMatchers(	HttpMethod.POST,"/api/addkeycap", "/api/addswitch",
+											"/api/addplate", "/api/addpcb",
+											"/api/addstabilizer", "/api/addkeyboardcase").hasRole("ADMIN")
 				.anyRequest().authenticated()
 				.and()
 				.formLogin()
@@ -48,28 +45,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.logoutSuccessUrl("/loggedout")
 				.logoutUrl("/logout")
 				.deleteCookies("JSESSIONID");
-//		http
-//				.authorizeRequests()
-//				.antMatchers("/api/getalltopics").permitAll()
-//				.antMatchers("/api/findtopicbycodename/**").permitAll()
-//				.antMatchers("/api/getpostbyid/**").permitAll()
-//				.antMatchers(HttpMethod.POST,"/api/addkeycap").hasRole("ADMIN")
-//				.antMatchers("/api/createpost/**").hasAnyRole("ADMIN", "USER")
-//				.antMatchers("/api/getpostsfor/**").permitAll()
-//				.antMatchers("/api/me").permitAll()
-//				.antMatchers("/login", "/registeruser").permitAll()
-//				.antMatchers("/dologoutuser").permitAll()
-//				.antMatchers("/api/getcsrf").permitAll()
-//				.anyRequest().authenticated()
-//				.and()
-//				.formLogin()
-//				.defaultSuccessUrl("http://192.168.1.105:3000/api/adminpage", true)
-//				.and()
-//				.logout()
-//				.logoutSuccessUrl("http://192.168.1.105:3000/")
-//				.logoutUrl("/dologoutuser")
-//				.deleteCookies("JSESSIONID");
-
 	}
 
 	@Bean
