@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "../css/ProductContainer.css";
+import { useDispatch } from "react-redux";
+import priceActions from "../action/priceActions";
 
 const ProductContainer = props => {
+	const dispatch = useDispatch();
+	useEffect(() => {
+		//when the component mounts, increase the price by its price
+		dispatch(priceActions.increasePriceBy(props.price));
+
+		//when the component unmounts, decrease the price by its price
+		return function cleanup() {
+			dispatch(priceActions.decreasePriceBy(props.price));
+		};
+	}, []);
 	return (
 		<div className="product-main-container">
 			<div className="product-image-container">

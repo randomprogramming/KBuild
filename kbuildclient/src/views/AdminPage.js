@@ -30,7 +30,6 @@ export default class AdminPage extends Component {
 				token,
 			},
 		});
-		console.log(token);
 	}
 	isInRole() {
 		axios.get("/api/isinrole").then(res => console.log(res.data));

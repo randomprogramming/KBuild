@@ -14,6 +14,10 @@
 	border-radius: 6px;
 }
 
+.product-name {
+	text-transform: capitalize;
+}
+
 .unselectable {
 	/* Prevent the element from being selected
 	This happens when the user clicks on the left and right buttons in
