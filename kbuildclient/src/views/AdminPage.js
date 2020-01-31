@@ -15,7 +15,10 @@ export default class AdminPage extends Component {
 		};
 	}
 	getLoginStatus() {
-		axios.get(API.me).then(res => console.log(res));
+		axios.get(API.me).then(res => {
+			res.data.length === 0 ? alert("not logged in") : alert("LOGGED IN!!");
+			console.log(res.data);
+		});
 	}
 	componentDidMount() {
 		axios.get(API.getcsrf).then(res => this.extractToken(res.data));

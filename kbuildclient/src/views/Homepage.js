@@ -28,7 +28,7 @@ const Homepage = () => {
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeyboardCases} />
 			</div>
-			<div className="price homepage-container-child">
+			<div className="price homepage-container-child unselectable">
 				<h2 style={{ padding: "0px", margin: "0px" }}>
 					Total Price: ${currentTotalPrice.toFixed(2)}
 				</h2>
