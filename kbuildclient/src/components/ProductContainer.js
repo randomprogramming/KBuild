@@ -38,10 +38,29 @@ const ProductContainer = props => {
 						{/* These are the fields that only some product have, so we have to check */}
 						<div style={{ marginTop: "1rem" }}>
 							{/* (bool && Container) will render the Container only if the bool is true */}
-							{props.manufacturer && <li>Manufacturer: {props.manufacturer}</li>}
-							{props.layoutSize && <li>Layout Size: {props.layoutSize + "%"}</li>}
-							{props.material && <li>Material: {props.material}</li>}
-							{props.switchColor && <li>Switch Color: {props.switchColor}</li>}
+							{props.manufacturer && (
+								<li>
+									<span className="product-description-name">Manufacturer:</span>{" "}
+									{props.manufacturer}
+								</li>
+							)}
+							{props.layoutSize && (
+								<li>
+									<span className="product-description-name">Layout Size:</span>{" "}
+									{props.layoutSize + "%"}
+								</li>
+							)}
+							{props.material && (
+								<li>
+									<span className="product-description-name">Material:</span> {props.material}
+								</li>
+							)}
+							{props.switchColor && (
+								<li>
+									<span className="product-description-name">Switch Color:</span>{" "}
+									{props.switchColor}
+								</li>
+							)}
 						</div>
 					</ul>
 				</div>

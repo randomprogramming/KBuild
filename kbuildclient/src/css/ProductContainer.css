@@ -19,6 +19,10 @@
 	text-transform: capitalize;
 }
 
+.product-description-name {
+	font-weight: bold;
+}
+
 .unselectable {
 	/* Prevent the element from being selected
 	This happens when the user clicks on the left and right buttons in
