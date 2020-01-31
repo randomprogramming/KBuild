@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 import "../css/ProductContainer.css";
 import { useDispatch } from "react-redux";
@@ -8,15 +8,28 @@ import QuantityBox from "./QuantityBox";
 const ProductContainer = props => {
 	const dispatch = useDispatch();
 
+	const [currentQuantity, setcurrentQuantity] = useState(1);
+
+	const changeCurrentQuantity = newAmount => {
+		setcurrentQuantity(newAmount);
+	};
+
 	useEffect(() => {
 		//when the component mounts, increase the price by its price
-		dispatch(priceActions.increasePriceBy(props.price));
+		dispatch(
+			priceActions.increasePriceBy(props.hasQuantity ? currentQuantity * props.price : props.price)
+		);
 
 		//when the component unmounts, decrease the price by its price
 		return function cleanup() {
-			dispatch(priceActions.decreasePriceBy(props.price));
+			dispatch(
+				priceActions.decreasePriceBy(
+					props.hasQuantity ? currentQuantity * props.price : props.price
+				)
+			);
 		};
-	}, [dispatch, props.price]);
+	}, [dispatch, props.price, currentQuantity]);
+
 	return (
 		<div className="product-main-container">
 			<div className="product-image-container">
@@ -69,7 +82,10 @@ const ProductContainer = props => {
 					</div>
 					{props.hasQuantity && (
 						<div className="quantity-box">
-							<QuantityBox />
+							<QuantityBox
+								currentQuantity={currentQuantity}
+								changeCurrentQuantity={changeCurrentQuantity}
+							/>
 						</div>
 					)}
 				</div>
