@@ -14,7 +14,7 @@ const ProductContainer = props => {
 		return function cleanup() {
 			dispatch(priceActions.decreasePriceBy(props.price));
 		};
-	}, []);
+	});
 	return (
 		<div className="product-main-container">
 			<div className="product-image-container">
