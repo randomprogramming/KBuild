@@ -28,7 +28,7 @@ const ProductContainer = props => {
 					<ul style={{ listStyleType: "none", padding: "0px", margin: "0px" }}>
 						{/* These are the fields that every product has */}
 						<li>
-							<h2 style={{ margin: "0px", padding: "0px" }}>{"$" + props.price}</h2>
+							<h2 style={{ margin: "0px", padding: "0px" }}>{"$" + props.price.toFixed(2)}</h2>
 						</li>
 						<li>
 							<a className="link-to-product" href={props.linkToProduct}>
