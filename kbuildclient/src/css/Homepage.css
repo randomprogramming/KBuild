@@ -9,6 +9,10 @@
 
 .price {
 	text-transform: uppercase;
-	align-self: flex-end;
-	margin-right: 13%;
+	/* align-self: flex-end; */
+	margin-left: 72%;
+	/* margin-right: 13%; */
+	position: sticky;
+	position: -webkit-sticky;
+	bottom: 15px;
 }
