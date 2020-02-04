@@ -82,6 +82,12 @@ const ProductContainer = props => {
 										{props.switchColor}
 									</li>
 								)}
+								{props.amountInOneQuantity && (
+									<li>
+										<span className="product-description-name">1 quantity eqauls to:</span>{" "}
+										{props.amountInOneQuantity + " switches"}
+									</li>
+								)}
 							</div>
 						</ul>
 					</div>

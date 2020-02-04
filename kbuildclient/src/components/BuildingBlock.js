@@ -76,6 +76,7 @@ const BuildingBlock = props => {
 					manufacturer={product.manufacturer}
 					switchColor={product.switchColor}
 					layoutSize={product.layoutSize}
+					amountInOneQuantity={product.amountInOneQuantity}
 				/>
 			)
 		);
