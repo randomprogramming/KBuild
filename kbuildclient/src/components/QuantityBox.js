@@ -10,10 +10,15 @@ const QuantityBox = props => {
 	const [currentQuantity, setcurrentQuantity] = useState(props.currentQuantity);
 	const [negativeIsClickable, setnegativeIsClickable] = useState(true);
 
-	const changeQuantity = amount => {
+	const changeQuantityBy = amount => {
 		if (currentQuantity + amount >= 0) {
 			setcurrentQuantity(currentQuantity + amount);
 		}
+	};
+
+	const changeQuantityTo = amount => {
+		if (amount > 150) setcurrentQuantity(150);
+		else setcurrentQuantity(parseInt(amount));
 	};
 
 	useEffect(() => {
@@ -31,13 +36,24 @@ const QuantityBox = props => {
 	return (
 		<div className="quantity-box-container">
 			<div>
-				<div className="quantity-button" onClick={changeQuantity.bind(this, 1)}>
+				<div className="quantity-button" onClick={changeQuantityBy.bind(this, 1)}>
 					<div>
 						<FontAwesomeIcon icon={faPlus} size={iconSize} color="#b58db8" />
 					</div>
 				</div>
 				<div className="quantity-container unselectable">QUANTITY~{currentQuantity}</div>
-				<div className="quantity-button" onClick={changeQuantity.bind(this, -1)}>
+				<div>
+					<input
+						type="number"
+						min="0"
+						max="150"
+						value={currentQuantity}
+						onChange={e => {
+							changeQuantityTo(e.target.value);
+						}}
+					></input>
+				</div>
+				<div className="quantity-button" onClick={changeQuantityBy.bind(this, -1)}>
 					<FontAwesomeIcon
 						icon={faMinus}
 						size={iconSize}
