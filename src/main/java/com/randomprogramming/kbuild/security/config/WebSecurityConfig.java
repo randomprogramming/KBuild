@@ -32,7 +32,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers(				"/api/getallkeycaps", "/api/getallswitches",
 											"/api/getallplates", "/api/getallpcbs",
 											"/api/getallstabilizers", "/api/getallkeyboardcases",
-											"/api/me", "/login", "/api/getcsrf", "/api/isinrole").permitAll()
+											"/api/me", "/login", "/api/getcsrf", "/api/isinrole", "/**").permitAll()
 				.antMatchers(	HttpMethod.POST,"/api/addkeycap", "/api/addswitch",
 											"/api/addplate", "/api/addpcb",
 											"/api/addstabilizer", "/api/addkeyboardcase").hasRole("ADMIN")

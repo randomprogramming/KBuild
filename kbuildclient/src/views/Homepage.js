@@ -13,6 +13,7 @@ const Homepage = () => {
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeycaps} hasQuantity={false} />
 			</div>
+			{/* <div className="homepage-container-child">ad</div> */}
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllSwitches} hasQuantity={true} />
 			</div>
@@ -25,6 +26,7 @@ const Homepage = () => {
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllPCBs} hasQuantity={false} />
 			</div>
+			{/* <div className="homepage-container-child">ad</div> */}
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeyboardCases} hasQuantity={false} />
 			</div>

@@ -20,6 +20,9 @@ const Navbar = () => {
 					<NavLink exact to="/about" activeClassName="navbar-link-active" className="navbar-link">
 						About
 					</NavLink>
+					<NavLink exact to="/contact" activeClassName="navbar-link-active" className="navbar-link">
+						Contact
+					</NavLink>
 				</div>
 			</div>
 		</nav>

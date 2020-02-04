@@ -5,6 +5,7 @@ import Homepage from "./views/Homepage";
 import Navbar from "./components/Navbar";
 import AdminPage from "./views/AdminPage";
 import About from "./views/About";
+import Contact from "./views/Contact";
 
 const App = () => {
 	return (
@@ -13,7 +14,8 @@ const App = () => {
 			<Switch>
 				<Route exact path="/" component={Homepage} />
 				<Route exact path="/about" component={About} />
-				<Route exact path="/api/adminpage" component={AdminPage} />
+				<Route exact path="/contact" component={Contact} />
+				<Route exact path="/apiadminpage" component={AdminPage} />
 			</Switch>
 		</Router>
 	);
