@@ -3,6 +3,7 @@ html {
 	padding: 0px;
 	/* background-color: #b58db8; */
 	background-color: #ececec;
+	overflow-y: scroll;
 }
 
 body {

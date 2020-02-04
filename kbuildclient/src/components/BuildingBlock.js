@@ -9,7 +9,7 @@ import ProductContainer from "./ProductContainer";
 const BuildingBlock = props => {
 	// Change the properties of both arrows here
 	const arrowIconSize = "9x";
-	const arrowMarginSize = "7%";
+	const arrowMarginSize = "12%";
 
 	const [currentProductContainer, setcurrentProductContainer] = useState(0);
 	const [productContainers, setproductContainers] = useState([]);
