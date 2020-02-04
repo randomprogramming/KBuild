@@ -12,6 +12,7 @@ const BuildingBlock = props => {
 	const arrowIconSize = "9x";
 	const arrowMarginSize = "12%";
 
+	//default is 1 since at index 0 is the 'default' productContainer
 	const [currentProductContainer, setcurrentProductContainer] = useState(1);
 	const [productContainers, setproductContainers] = useState([]);
 
@@ -78,6 +79,7 @@ const BuildingBlock = props => {
 				/>
 			)
 		);
+		//if for some reason there's no or only 1 product container, this shouldn't happen really
 		if (tempProductContainers.length === 0 || tempProductContainers.length === 1) {
 			setrightIsClickable(false);
 		}

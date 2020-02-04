@@ -1,7 +1,7 @@
 //This is the URL of the server where all the axios requests will be headed
 // const SERVER_URL = "http://192.168.1.105:8080/api";
 const SERVER_URL = "";
-
+// Not needed when deployment and not needed when using 'proxy' in package.json
 const API = {
 	login: "/login",
 	me: SERVER_URL + "/api/me",

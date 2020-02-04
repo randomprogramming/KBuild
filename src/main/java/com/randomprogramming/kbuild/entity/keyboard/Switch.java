@@ -18,6 +18,10 @@ public class Switch extends ProductModel {
 	@Column
 	private String switchColor;
 
+//	Since the switches are mostly sold in packs of 10, this property tells us how much 1 quantity equals in switches
+	@Column
+	private int amountInOneQuantity;
+
 	public int getId() {
 		return id;
 	}
@@ -40,5 +44,13 @@ public class Switch extends ProductModel {
 
 	public void setSwitchColor(String switchColor) {
 		this.switchColor = switchColor;
+	}
+
+	public int getAmountInOneQuantity() {
+		return amountInOneQuantity;
+	}
+
+	public void setAmountInOneQuantity(int amountInOneQuantity) {
+		this.amountInOneQuantity = amountInOneQuantity;
 	}
 }

@@ -11,6 +11,7 @@ const QuantityBox = props => {
 	const [negativeIsClickable, setnegativeIsClickable] = useState(true);
 
 	const changeQuantityBy = amount => {
+		//Only numbers between 0 and 150 are allowed
 		if (currentQuantity + amount >= 0 && currentQuantity + amount < 151) {
 			setcurrentQuantity(currentQuantity + amount);
 		}
@@ -25,6 +26,7 @@ const QuantityBox = props => {
 	};
 
 	useEffect(() => {
+		//This runs whenever currentQuantity changes
 		props.changeCurrentQuantity(currentQuantity);
 
 		if (currentQuantity === 0) {

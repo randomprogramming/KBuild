@@ -10,10 +10,12 @@ const Homepage = () => {
 
 	return (
 		<div className="main-homepage-container">
+			{/* BuildingBlocks are containers for certain product type(switc,keycap...)
+			Each BuildingBlock contains ProductContainers which are actually what holds all the product info */}
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeycaps} hasQuantity={false} />
 			</div>
-			{/* <div className="homepage-container-child">ad</div> */}
+			{/* <div className="homepage-container-child">eventual ad</div> */}
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllSwitches} hasQuantity={true} />
 			</div>
@@ -26,7 +28,7 @@ const Homepage = () => {
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllPCBs} hasQuantity={false} />
 			</div>
-			{/* <div className="homepage-container-child">ad</div> */}
+			{/* <div className="homepage-container-child">eventual ad</div> */}
 			<div className="homepage-container-child">
 				<BuildingBlock getDataFrom={API.getAllKeyboardCases} hasQuantity={false} />
 			</div>

@@ -33,27 +33,29 @@ const About = () => {
 
 				<h3 style={{ marginTop: "55px" }}>Here are some good videos:</h3>
 				<div>
-					<iframe
-						title="First video"
-						width="560"
-						height="315"
-						src="https://www.youtube.com/embed/JpV-eJNrXjk"
-						frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen
-					></iframe>
-				</div>
-				{/* <div>Ad</div> */}
-				<div style={{ marhinTop: "75px" }}>
-					<iframe
-						title="Second video"
-						width="560"
-						height="315"
-						src="https://www.youtube.com/embed/SABRc5qlnuk"
-						frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen
-					></iframe>
+					<div>
+						<iframe
+							title="First video"
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/JpV-eJNrXjk"
+							frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
+					{/* <div>Ad</div> */}
+					<div style={{ marhinTop: "75px" }}>
+						<iframe
+							title="Second video"
+							width="560"
+							height="315"
+							src="https://www.youtube.com/embed/SABRc5qlnuk"
+							frameborder="0"
+							allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+							allowfullscreen
+						></iframe>
+					</div>
 				</div>
 			</div>
 		</div>
