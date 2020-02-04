@@ -12,7 +12,7 @@ const BuildingBlock = props => {
 	const arrowIconSize = "9x";
 	const arrowMarginSize = "12%";
 
-	const [currentProductContainer, setcurrentProductContainer] = useState(0);
+	const [currentProductContainer, setcurrentProductContainer] = useState(1);
 	const [productContainers, setproductContainers] = useState([]);
 
 	const [leftIsClickable, setleftIsClickable] = useState(currentProductContainer !== 0);
@@ -27,14 +27,30 @@ const BuildingBlock = props => {
 		axios.get(props.getDataFrom).then(res => extractData(res.data));
 	};
 
+	const getDefaultProductName = productName => {
+		productName = productName.toLowerCase();
+		// Turn the product name into something normal that the user can read
+		if (productName === "keycaps") return "No keycaps";
+		else if (productName === "switches") return "No switches";
+		else if (productName === "plates") return "No plate";
+		else if (productName === "stabilizers") return "No stabilizers";
+		else if (productName === "pcbs") return "No PCB";
+		else if (productName === "keyboardcases") return "No case";
+
+		//If no productName matches were found, this will be okay
+		return "No" + productName;
+	};
+
 	const extractData = data => {
 		let tempProductContainers = [];
 
+		// This is a default ProductContainer which can be selected if the user doesn't need the specific part
+		// this should always be at index 0
 		tempProductContainers.push(
 			<ProductContainer
 				isDefault
 				hasQuantity={false}
-				productName={"Without " + productName}
+				productName={getDefaultProductName(productName)}
 				linkToImage={Empty}
 				price={0}
 			/>
@@ -42,6 +58,7 @@ const BuildingBlock = props => {
 
 		//for each product that we fetched from the server, create a ProductContainer component from it and
 		//store that ProductContainer in the tempContainers, which then gets saved to the state later
+		//this is done to prevent continous saving to state, which causes unnecesary re-renders
 		data.map(product =>
 			tempProductContainers.push(
 				// Whenever we add new properties to Products in database, we have to update this here
@@ -137,8 +154,6 @@ const BuildingBlock = props => {
 		</div>
 	);
 };
-
-// Change the margin of both arrows here
 
 const styles = {
 	clickableButton: {

@@ -10,8 +10,6 @@
 .product-image {
 	height: 100%;
 	width: 275px;
-	/* object-fit: contain; */
-	/* object-fit: scale-down; */
 	border: 2px solid #b58db8;
 	border-radius: 6px;
 }
