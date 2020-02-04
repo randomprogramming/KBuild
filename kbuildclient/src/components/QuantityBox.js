@@ -11,14 +11,17 @@ const QuantityBox = props => {
 	const [negativeIsClickable, setnegativeIsClickable] = useState(true);
 
 	const changeQuantityBy = amount => {
-		if (currentQuantity + amount >= 0) {
+		if (currentQuantity + amount >= 0 && currentQuantity + amount < 151) {
 			setcurrentQuantity(currentQuantity + amount);
 		}
 	};
 
 	const changeQuantityTo = amount => {
-		if (amount > 150) setcurrentQuantity(150);
-		else setcurrentQuantity(parseInt(amount));
+		// prevent the user to enter any number larger than 150 and non number things
+		if (!isNaN(parseInt(amount))) {
+			if (amount > 150) setcurrentQuantity(150);
+			else setcurrentQuantity(parseInt(amount));
+		}
 	};
 
 	useEffect(() => {
@@ -34,32 +37,41 @@ const QuantityBox = props => {
 	}, [currentQuantity]);
 
 	return (
-		<div className="quantity-box-container">
+		<div className="quantity-main-container">
+			<div className="quantity-button-container">
+				<FontAwesomeIcon
+					icon={faPlus}
+					size={iconSize}
+					color="#b58db8"
+					onClick={changeQuantityBy.bind(this, 1)}
+				/>
+			</div>
 			<div>
-				<div className="quantity-button" onClick={changeQuantityBy.bind(this, 1)}>
-					<div>
-						<FontAwesomeIcon icon={faPlus} size={iconSize} color="#b58db8" />
-					</div>
-				</div>
-				<div className="quantity-container unselectable">QUANTITY~{currentQuantity}</div>
-				<div>
-					<input
-						type="number"
-						min="0"
-						max="150"
-						value={currentQuantity}
-						onChange={e => {
-							changeQuantityTo(e.target.value);
-						}}
-					></input>
-				</div>
-				<div className="quantity-button" onClick={changeQuantityBy.bind(this, -1)}>
-					<FontAwesomeIcon
-						icon={faMinus}
-						size={iconSize}
-						color={negativeIsClickable ? "#b58db8" : "gray"}
-					/>
-				</div>
+				{/* <div className="quantity-container unselectable">QUANTITY~{currentQuantity}</div> */}
+				<div className="quantity-container unselectable">QUANTITY</div>
+			</div>
+			<div>
+				<input
+					style={{ textAlign: "center", fontSize: "16px" }}
+					type="number"
+					min="0"
+					max="150"
+					value={currentQuantity}
+					onChange={e => {
+						changeQuantityTo(e.target.value);
+					}}
+				/>
+			</div>
+			<div
+				className="quantity-button-container"
+				onClick={changeQuantityBy.bind(this, -1)}
+				style={{ cursor: negativeIsClickable ? "pointer" : "default" }}
+			>
+				<FontAwesomeIcon
+					icon={faMinus}
+					size={iconSize}
+					color={negativeIsClickable ? "#b58db8" : "gray"}
+				/>
 			</div>
 		</div>
 	);
