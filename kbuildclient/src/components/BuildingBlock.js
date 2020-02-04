@@ -61,6 +61,10 @@ const BuildingBlock = props => {
 	};
 
 	useEffect(() => {
+		//This is we we determine on what building block we are.
+		//the getdatafrom are always the same format: '/api/getallPRODUCTNAME'
+		//We can remove the '/api/getall' part and in that way know where we currently are
+		console.log(props.getDataFrom.split("/api/getall")[1]);
 		loadData();
 	}, []);
 
