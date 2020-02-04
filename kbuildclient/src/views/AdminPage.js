@@ -125,6 +125,7 @@ export default class AdminPage extends Component {
 							"vendorName",
 							"manufacturer",
 							"switchColor",
+							"amountInOneQuantity",
 						]}
 						_csrf={this.state._csrf}
 						submitURL={API.addSwitch}
