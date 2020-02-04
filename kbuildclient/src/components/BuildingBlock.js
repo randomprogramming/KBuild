@@ -5,6 +5,7 @@ import axios from "axios";
 
 import "../css/BuildingBlock.css";
 import ProductContainer from "./ProductContainer";
+import Empty from "../images/empty.png";
 
 const BuildingBlock = props => {
 	// Change the properties of both arrows here
@@ -17,12 +18,27 @@ const BuildingBlock = props => {
 	const [leftIsClickable, setleftIsClickable] = useState(currentProductContainer !== 0);
 	const [rightIsClickable, setrightIsClickable] = useState(false);
 
+	//This is we we determine on what building block we are.
+	//the getdatafrom are always the same format: '/api/getallPRODUCTNAME'
+	//We can remove the '/api/getall' part and in that way know where we currently are
+	const productName = props.getDataFrom.split("/api/getall")[1];
+
 	const loadData = () => {
 		axios.get(props.getDataFrom).then(res => extractData(res.data));
 	};
 
 	const extractData = data => {
 		let tempProductContainers = [];
+
+		tempProductContainers.push(
+			<ProductContainer
+				isDefault
+				hasQuantity={false}
+				productName={"Without " + productName}
+				linkToImage={Empty}
+				price={0}
+			/>
+		);
 
 		//for each product that we fetched from the server, create a ProductContainer component from it and
 		//store that ProductContainer in the tempContainers, which then gets saved to the state later
@@ -61,10 +77,6 @@ const BuildingBlock = props => {
 	};
 
 	useEffect(() => {
-		//This is we we determine on what building block we are.
-		//the getdatafrom are always the same format: '/api/getallPRODUCTNAME'
-		//We can remove the '/api/getall' part and in that way know where we currently are
-		console.log(props.getDataFrom.split("/api/getall")[1]);
 		loadData();
 	}, []);
 

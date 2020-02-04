@@ -33,7 +33,12 @@ const ProductContainer = props => {
 	return (
 		<div className="product-main-container">
 			<div className="product-image-container">
-				<img className="product-image unselectable" src={props.linkToImage} alt="product"></img>
+				<img
+					className="product-image unselectable"
+					src={props.linkToImage}
+					alt="product"
+					style={{ objectFit: props.isDefault ? "scale-down" : "contain" }}
+				></img>
 			</div>
 			<div className="product-info-container">
 				<h2 className="product-name" style={{ margin: "0px", padding: "0px", maxWidth: "1000px" }}>
